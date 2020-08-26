@@ -1,24 +1,67 @@
-# README
+# Title
+ 
+ 
+# Outline
+ 
+ 
+# URL
+ 
+ 
+# How to Use
+ 
+ 
+# Purpose
+ 
+ 
+# Requirement
+ 
+ 
+# Explanation
+ 
+ 
+# To Be Implemented
+ 
+ 
+# Database Design
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-* Ruby version
+### Association
+- has_many :complaints
+- has_many :comments
 
-* System dependencies
+## complaints テーブル
 
-* Configuration
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| title    | string     | null: false                    |
+| text     | text       | null: false                    |
+| user     | references | null: false, foreign_key: true |
 
-* Database creation
+### Association
+- belongs_to :user
+- has_many   :comments
 
-* Database initialization
+## comment テーブル
 
-* How to run the test suite
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| comment   | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| complaint | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
+- belongs_to :complaint
 
-* Deployment instructions
+# Author
+ 
+ 
+# How It Works
 
-* ...
