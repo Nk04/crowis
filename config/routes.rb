@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resoutces :complaints, only: :index
+  resources :complaints, only: :index
 end
