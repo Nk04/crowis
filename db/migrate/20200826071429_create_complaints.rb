@@ -1,8 +1,8 @@
 class CreateComplaints < ActiveRecord::Migration[6.0]
   def change
     create_table :complaints do |t|
-      t.string :title
-      t.text   :text
+      t.string     :title,  null: false
+      t.text       :text,   null: false
       t.timestamps
     end
   end
