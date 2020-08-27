@@ -1,5 +1,5 @@
 class ComplaintsController < ApplicationController
   def index
-    @complaints = Complaint.all
+    @complaints = Complaint.new
   end
 end
