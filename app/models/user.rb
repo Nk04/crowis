@@ -5,4 +5,12 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
   # association
   has_many :complaints
+
+  # validation
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+
+  with_options presence: true do
+    validates :nick_name
+    validates :password, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }, confirmation: true
+  end
 end
