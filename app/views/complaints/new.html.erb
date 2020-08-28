@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">不満に関する情報を入力</h2>
-    <%= form_with local: true do |f| %>
+    <%= form_with model: @complaints, local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%# render 'shared/error_messages', model: f.object %>
@@ -17,16 +17,17 @@
         タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"タイトル名 例) タンスの角について", maxlength:"40" %>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"タイトル名 例) タンスの角について", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           不安・不満・不便の内容
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"items-text", id:"item-info", placeholder:"内容 例）小指をぶつけてしまい、とても痛かった。タンスの角につけるカバーが欲しい。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"内容 例）小指をぶつけてしまい、とても痛かった。タンスの角につけるカバーが欲しい。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
+    
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "出品する" ,class:"sell-btn" %>
