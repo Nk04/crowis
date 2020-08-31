@@ -2,6 +2,7 @@
 
 <%# 商品の概要 %>
 <div class="item-show">
+<div class="item-comment-box">
   <div class="item-box">
     <h2 class="name">
       <%= @complaints.title %>
@@ -11,8 +12,8 @@
         <%= @complaints.text %>
       </span>
     </div>
+  
     <% if user_signed_in? && current_user.id == @complaints.user_id %>
-
     <%= link_to '商品の編集', edit_complaint_path(@complaints.id), method: :get, class: "item-red-btn" %>
     <p class='or-text'>or</p>
     <%= link_to '削除', complaint_path(@complaints), method: :delete, class:'item-destroy' %>
@@ -21,39 +22,65 @@
     <div class="option">
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+        <span class= fovorite-btn-font >それな 0</span>
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
+        <span>不適切な投稿内容の通報</span>
       </div>
     </div>
   </div>
   <%# /商品の概要 %>
 
   <div class="comment-box">
+    <div class= "comment-list">
+      <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        Tom
+      </div>
+      <div class="message-date">
+        2020/3/31(Wed) 12:43:30
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        おはよう
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        Sim
+      </div>
+      <div class="message-date">
+        2020/3/31(Wed) 12:43:30
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        こんばんは
+      </div>
+    </div>
+  </div>
+    </div>
     <form>
       <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
+      <a href="" class="btn btn--green btn--cubic">コメントする</a>
     </form>
+  </div>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
-      ＜ 前の商品
+      ＜ 前へ
     </a>
     <a href="#" class="change-item-btn">
-      後ろの商品 ＞
+      後へ ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <%= link_to "戻る", root_path, class:'another-item' %>
 </div>
 
 <%= render "shared/footer" %>

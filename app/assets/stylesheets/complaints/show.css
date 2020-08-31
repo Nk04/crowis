@@ -1,7 +1,6 @@
 /* 商品の概要 */
 
 .item-show {
-  background-color: #f8f8f8;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -9,11 +8,15 @@
   padding: 5vh 0;
 }
 
+.item-comment-box{
+  display: flex;
+  align-items: center;
+}
+
 .item-box {
   background-color: #FFF;
-  width: 70vw;
-  min-width: 1200px;
-  padding: 10vh 15vw;
+  width: 50vw;
+  padding: 10vh 11vw 10vh 1vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +25,15 @@
 .item-box>.name {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
+  left: 10px;
+  top: 2px;
+  padding: 0 .5em;
+  font-weight: bold;
+  color: #769164; /* タイトル色 */
+  border-style: none none solid;
+  border-color: #d6e9ca; /*タイトル下線 */
+  border-width: 3px;
 }
 
 .item-box-img {
@@ -38,16 +49,24 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .item-price-box>.item-price {
-  font-size: 4vh;
+  font-size: 2.5vh;
   font-weight: bold;
+  word-break: break-all;
+  position: relative;
+  margin: 2em auto;
+  padding: 1em 1em .5em;
+  background-color: #badcad; /* 背景色 */
+  color: #555; /* 文字色 */ 
+  box-shadow: 0 0 10px 10px #badcad; /* 影 */
 }
 
 .item-red-btn {
   text-align: center;
-  background-color: #ea352d;
+  background-color: #36a55d;
   font-size: 24px;
   font-weight: bold;
   color: #FFF;
@@ -60,10 +79,10 @@
 }
 
 .item-destroy {
-  background-color: lightgray;
+  background-color: red;
   text-align: center;
   font-size: 24px;
-  color: black;
+  color: white;
   margin: 20px 0px;
   padding: 2vh 10vw;
 }
@@ -76,9 +95,8 @@
 
 .favorite-btn {
   border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
+  min-width: 100px;
+  color: black;
   border: 2px solid #ffb340;
   display: flex;
   justify-content: center;
@@ -90,13 +108,16 @@
   margin-right: 5px;
 }
 
+.fovorite-btn-font{
+  margin-top: 3px;
+}
+
 .report-btn {
   border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
+  min-width: 160px;
 
   padding: 1vh 0;
-  color: black;
+  color: tomato;
   border: 2px solid #2d2d2d;
   display: flex;
   justify-content: center;
@@ -117,31 +138,104 @@
   text-align: center;
 }
 
+.comment-list{
+  height: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: scroll;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  border: double 5px #158b2b;
+  text-align: initial;
+}
+
+.message {
+  margin: 10px 0;
+}
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
 .comment-text {
   width: 100%;
   height: 100px;
   padding: 10px;
+  margin-bottom: 15px;
   border: solid 2px #dedede;
+  font-size: 15px;
   resize: none;
 }
 
-.comment-warn {
-  padding: 10px;
-  font-size: 14px;
-  margin: 10px 0px;
-  text-align: left;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-.comment-btn {
-  line-height: 48px;
-  background-color: white;
-  border: 1px solid #36a55d;
-  color: #fff;
-  width: 50%;
-  min-width: 150px;
-  font-size: 18px;
-  border-radius: 100px;
-  margin-bottom: 2vh;
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.1s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn--green {
+  color: #000;
+  background-color: #4bd665;
+  border-bottom: 5px solid #158b2b;
+}
+
+a.btn--green:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #4bd665;
+  border-bottom: 2px solid #158b2b;
 }
 
 .comment-flag {
@@ -161,7 +255,7 @@
 }
 
 .change-item-btn {
-  font-size: 30px;
+  font-size: 20px;
   text-decoration: none;
   color: #36a55d;
 }

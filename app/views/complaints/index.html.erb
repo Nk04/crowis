@@ -3,24 +3,18 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h1 class='title'>投稿一覧</h1>
-    <%= link_to '新規投稿', "#", class: "subtitle" %>
+    <%= link_to '新規投稿一覧', "#", class: "title" %>
     <ul class='item-lists'>
-
       <% @complaints.each do |complaints| %>
       <li class='list'>
         <%= link_to complaint_path(complaints.id) do %>
-        <div class='item-info'> 
-          <h3 class='item-name'>
+          <h1 class='item-name'>
             <%= complaints.title %>
-          </h3>
-          <div class='item-price'>
-            <span><%= complaints.text %></span>
+          </h1>
+            <p class='complaint-text'><%= complaints.text %></p>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
-            </div>
-          </div>
         </div> 
         <% end %>
       </li>

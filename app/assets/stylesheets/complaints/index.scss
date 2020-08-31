@@ -20,6 +20,27 @@ a {
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
+  position: relative;
+  color: #158b2b;
+  font-size: 20px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+.title:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 150px;
+  height: 58px;
+  border-radius: 50%;
+  border: 5px solid #a6ddb0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .item-contents>.subtitle {
@@ -32,7 +53,7 @@ a {
 
 .item-lists {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -42,50 +63,40 @@ a {
   width: 50vh;
   padding: 1vw;
   background-color: #FFF;
-}
-
-
-
-
-
-
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
-
-.sold-out>span {
-  color: #FFF;
-  font-size: 45px;
-  font: bold;
-}
-
-
-.item-info {
-  background-color: #FFF;
-  color: black;
-  padding: 1vw;
-  height: 100%;
-  display: flow-root;
+  word-break: break-all;
+  font-size: 2vh;
 }
 
 .item-name {
-  font-size: 2.5vh;
+  left: 10px;
+  top: 2px;
+  padding: 0 .5em;
+  font-weight: bold;
+  color: #769164; /* タイトル色 */
+  border-style: none none solid;
+  border-color: #d6e9ca; /*タイトル下線 */
+  border-width: 3px;
 }
 
-.item-price {
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: space-between;
+.complaint-text{
+  position: relative;
+  height: 100px;
+  margin: 2em auto;
+  padding: 1em 1em .5em;
+  width: 90%;
+  background-color: #badcad; /* 背景色 */
+  color: #555; /* 文字色 */ 
+  box-shadow: 0 0 10px 10px #badcad; /* 影 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 
 .star-btn {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -96,7 +107,10 @@ a {
 }
 
 .star-count {
+  margin-top: 4px;
   font-size: 2vh;
+  color: black;
 }
+
 
 /* //商品一覧 */
