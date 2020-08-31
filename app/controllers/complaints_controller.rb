@@ -1,5 +1,6 @@
 class ComplaintsController < ApplicationController
   before_action :set_complaints, only: [:show, :edit, :update, :destroy]
+  before_action :access_restrictions, only: [:edit, :update, :destroy]
 
   def index
     @complaints = Complaint.order('created_at DESC')
@@ -45,5 +46,9 @@ class ComplaintsController < ApplicationController
 
   def set_complaints
     @complaints = Complaint.find(params[:id])
+  end
+
+  def access_restrictions
+    redirect_to root_path if current_user.id !=  @complaints.user_id
   end
 end
