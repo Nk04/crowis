@@ -7,21 +7,21 @@
     <%= link_to '新規投稿', "#", class: "subtitle" %>
     <ul class='item-lists'>
 
-      <% @complaints.each do |comlpaints| %>
+      <% @complaints.each do |complaints| %>
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to complaint_path(complaints.id) do %>
         <div class='item-info'> 
           <h3 class='item-name'>
-            <%= comlpaints.title %>
+            <%= complaints.title %>
           </h3>
           <div class='item-price'>
-            <span><%= comlpaints.text %></span>
+            <span><%= complaints.text %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
             </div>
           </div>
-        </div>
+        </div> 
         <% end %>
       </li>
       <% end %>
