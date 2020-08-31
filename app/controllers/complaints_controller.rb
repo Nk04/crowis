@@ -1,5 +1,5 @@
 class ComplaintsController < ApplicationController
-  before_action :set_complaints, only: [:show, :edit, :update]
+  before_action :set_complaints, only: [:show, :edit, :update, :destroy]
 
   def index
     @complaints = Complaint.order('created_at DESC')
@@ -26,6 +26,13 @@ class ComplaintsController < ApplicationController
   def update
     @complaints.update!(complaint_params)
     redirect_to complaint_path
+  rescue StandardError
+    render :edit
+  end
+
+  def destroy
+    @complaints.destroy!
+    redirect_to root_path
   rescue StandardError
     render :edit
   end
