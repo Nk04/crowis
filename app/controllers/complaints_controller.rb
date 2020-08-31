@@ -1,7 +1,7 @@
 class ComplaintsController < ApplicationController
 
   def index
-    Complaint.order('created_at DESC')
+    @complaints = Complaint.order('created_at DESC')
   end
 
   def new
