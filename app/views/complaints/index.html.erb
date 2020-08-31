@@ -7,15 +7,15 @@
     <%= link_to '新規投稿', "#", class: "subtitle" %>
     <ul class='item-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <% @complaints.each do |comlpaints| %>
       <li class='list'>
         <%= link_to "#" do %>
-        <div class='item-info'>
+        <div class='item-info'> 
           <h3 class='item-name'>
-            <%= "商品名" %>
+            <%= comlpaints.title %>
           </h3>
           <div class='item-price'>
-            <span><%= "販売価格" %>円<br>(税込み)</span>
+            <span><%= comlpaints.text %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
@@ -24,35 +24,15 @@
         </div>
         <% end %>
       </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-
-      <%# 商品がない場合のダミー %>
-      <%# 商品がある場合は表示されないようにしましょう %>
-      <li class='list'>
-        <%= link_to '#' do %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            商品を出品してね！
-          </h3>
-          <div class='item-price'>
-            <span>99999999円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合のダミー %>
+      <% end %>
     </ul>
   </div>
+
   <%# //商品一覧 %>
 </div>
-<div class='purchase-btn'>
-  <span class='purchase-btn-text'>投稿する</span>
-  <a href="#">
-  </a>
-</div>
+<%= link_to  new_complaint_path do %>
+  <div class='purchase-btn'>
+    <span class='purchase-btn-text'>投稿する</span>
+  </div>
+<% end %>
 <%= render "shared/footer" %>
