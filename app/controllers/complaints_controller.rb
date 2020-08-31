@@ -1,4 +1,5 @@
 class ComplaintsController < ApplicationController
+  before_action :set_complaints, only: [:show]
 
   def index
     @complaints = Complaint.order('created_at DESC')
@@ -16,9 +17,16 @@ class ComplaintsController < ApplicationController
     render :new
   end
 
+  def show
+  end
+
   private
 
   def complaint_params
     params.require(:complaint).permit(:title, :text).merge(user_id: current_user.id)
+  end
+
+  def set_complaints
+    @complaints = Complaint.find(params[:id])
   end
 end

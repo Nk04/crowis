@@ -45,11 +45,6 @@
   font-weight: bold;
 }
 
-.item-price-box>.item-postage {
-  font-size: 16px;
-}
-
-
 .item-red-btn {
   text-align: center;
   background-color: #ea352d;
@@ -71,31 +66,6 @@
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
-}
-
-.item-explain-box {
-  font-size: 18px;
-  margin: 40px 0px;
-}
-
-.detail-table {
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-.detail-item {
-  width: 20%;
-  background-color: #eee;
-  border: 1px solid #dedede;
-  font-size: 14px;
-  text-align: center;
-}
-
-.detail-value {
-  width: 80%;
-  padding: 20px;
-  border: 1px solid #dedede;
-  font-size: 14px;
 }
 
 .option {
