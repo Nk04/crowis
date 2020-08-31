@@ -1,5 +1,5 @@
 class ComplaintsController < ApplicationController
-  before_action :set_complaints, only: [:show]
+  before_action :set_complaints, only: [:show, :edit, :update]
 
   def index
     @complaints = Complaint.order('created_at DESC')
@@ -18,6 +18,16 @@ class ComplaintsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    @complaints.update!(complaint_params)
+    redirect_to complaint_path
+  rescue StandardError
+    render :edit
   end
 
   private
