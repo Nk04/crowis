@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   } 
 
   root "complaints#index"
-  resources :complaints
   resources :users, only: [:new, :create, :destroy]
+  resources :complaints do
+    resources :comments, only: [:create]
+  end
 end
