@@ -21,6 +21,7 @@ class ComplaintsController < ApplicationController
   def show
     @complaints = Complaint.find(params[:id])
     @comment = Comment.new
+    @comments = @complaints.comments.includes(:user)
   end
 
   def edit

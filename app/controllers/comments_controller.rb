@@ -5,12 +5,12 @@ class CommentsController < ApplicationController
     @comment.save!
     redirect_to root_path
   rescue StandardError
-    redirect_to "/complaints/10"
+    redirect_to root_path
   end
 end
 
 private
 
 def comment_params
-  params.permit(:comment).merge(user_id: current_user.id, complaint_id: params[:complaint_id])
+  params.require(:comment).permit(:comment).merge(user_id: current_user.id, complaint_id: params[:complaint_id])
 end

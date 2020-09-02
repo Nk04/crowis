@@ -27,40 +27,26 @@
 
   <div class="comment-box">
     <div class= "comment-list">
+    <% @comments.each do |comment| %>
       <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
+        <div class="upper-message">
+          <div class="message-user">
+            <%= comment.user.nick_name %>
+          </div>
+          <div class="message-date">
+            <%= comment.created_at %>
+          </div>
+        </div>
+        <div class="lower-message">
+          <div class="message-content">
+            <%= comment.comment %>
+          </div>
+        </div>
       </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
+    <% end %>
     </div>
-    <div class="lower-message">
-      <div class="message-content">
-        おはよう
-      </div>
-    </div>
-  </div>
-
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Sim
-      </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        こんばんは
-      </div>
-    </div>
-  </div>
-    </div>
-    <%= form_with model: @comments, url:complaint_comments_path(@complaints.id), local: true  do |f| %>
-      <%= f.text_area :comment, class:"comment-text" %>
+    <%= form_with model: @comment, url:complaint_comments_path(@complaints.id), local: true  do |f| %>
+      <%= f.text_area :comment, class:"comment-text", placeholder:"コメントを入力してください" %>
       <%= f.submit "コメントする", class:"click-down" %>
     <% end %>
   </div>
