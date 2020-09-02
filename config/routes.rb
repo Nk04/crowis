@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root "complaints#index"
   resources :users, only: [:new, :create, :destroy]
   resources :complaints do
-    resources :comments, only: [:create]
+    resources :comments, only: :create
   end
 end

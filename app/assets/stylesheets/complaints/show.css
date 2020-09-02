@@ -64,29 +64,6 @@
   box-shadow: 0 0 10px 10px #badcad; /* 影 */
 }
 
-.item-red-btn {
-  text-align: center;
-  background-color: #36a55d;
-  font-size: 24px;
-  font-weight: bold;
-  color: #FFF;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.or-text {
-  font-size: 20px;
-}
-
-.item-destroy {
-  background-color: red;
-  text-align: center;
-  font-size: 24px;
-  color: white;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
 .option {
   display: flex;
   justify-content: space-between;
@@ -231,6 +208,34 @@ html {
 .comment-flag-icon {
   margin: 10px 5px 0 0;
 }
+
+
+.edit-delete{
+}
+
+.item-red-btn {
+  text-align: center;
+  background-color: #36a55d;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
+.or-text {
+  font-size: 20px;
+}
+
+.item-destroy {
+  background-color: red;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
 
 .links {
   display: flex;

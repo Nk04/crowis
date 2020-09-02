@@ -1,5 +1,5 @@
 class ComplaintsController < ApplicationController
-  before_action :set_complaints, only: [:show, :edit, :update, :destroy]
+  before_action :set_complaints, only: [:edit, :update, :destroy]
   before_action :access_restrictions, only: [:edit, :update, :destroy]
 
   def index
@@ -19,6 +19,8 @@ class ComplaintsController < ApplicationController
   end
 
   def show
+    @complaints = Complaint.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit

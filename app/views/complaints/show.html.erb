@@ -12,13 +12,6 @@
         <%= @complaints.text %>
       </span>
     </div>
-  
-    <% if user_signed_in? && current_user.id == @complaints.user_id %>
-    <%= link_to '商品の編集', edit_complaint_path(@complaints.id), method: :get, class: "item-red-btn" %>
-    <p class='or-text'>or</p>
-    <%= link_to '削除', complaint_path(@complaints), method: :delete, class:'item-destroy' %>
-    <% end %>
-
     <div class="option">
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
@@ -66,12 +59,19 @@
     </div>
   </div>
     </div>
-    <form>
-      <textarea class="comment-text"></textarea>
-      <a href="" class="btn btn--green btn--cubic">コメントする</a>
-    </form>
+    <%= form_with model: @comments, url:complaint_comments_path(@complaints.id), local: true  do |f| %>
+      <%= f.text_area :comment, class:"comment-text" %>
+      <%= f.submit "コメントする", class:"click-down" %>
+    <% end %>
   </div>
   </div>
+    <% if user_signed_in? && current_user.id == @complaints.user_id %>
+      <div class= "edit-delete">
+        <%= link_to '商品の編集', edit_complaint_path(@complaints.id), method: :get, class: "item-red-btn" %>
+          <p class='or-text'>or</p>
+        <%= link_to '削除', complaint_path(@complaints), method: :delete, class:'item-destroy' %>
+      </div>
+    <% end %>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前へ
