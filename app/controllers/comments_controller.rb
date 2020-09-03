@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save!
-    redirect_to root_path
+    redirect_to complaint_path(@comment.complaint_id)
   rescue StandardError
     redirect_to root_path
   end
