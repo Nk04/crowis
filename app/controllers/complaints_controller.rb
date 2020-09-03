@@ -21,7 +21,7 @@ class ComplaintsController < ApplicationController
   def show
     @complaints = Complaint.find(params[:id])
     @comment = Comment.new
-    @comments = @complaints.comments.includes(:user)
+    @comments = @complaints.comments.includes(:user).order('created_at DESC')
   end
 
   def edit
