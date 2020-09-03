@@ -17,7 +17,7 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        <%= @complaints.text %>
+        <%= raw Rinku.auto_link(@complaints.text) %>
       </span>
     </div>
     <div class="option">
@@ -47,7 +47,7 @@
         </div>
         <div class="lower-message">
           <div class="message-content">
-            <%= comment.comment %>
+            <%= raw Rinku.auto_link(h(comment.comment)) %>
           </div>
         </div>
       </div>
