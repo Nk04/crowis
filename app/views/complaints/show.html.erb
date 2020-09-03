@@ -4,21 +4,22 @@
 <div class="item-show">
 <div class="item-comment-box">
   <div class="item-box">
-    <h2 class="name">
-      <%= @complaints.title %>
-    </h2>
+    <div class="mk">
+      <h2 class="name">
+        <%= @complaints.title %>
+      </h2>
+      <% if user_signed_in? && current_user.id == @complaints.user_id %>
+      <div class= "edit-delete">
+        <%= link_to '編集', edit_complaint_path(@complaints.id), method: :get, class: "item-red-btn" %>
+        <%= link_to '削除', complaint_path(@complaints), method: :delete, class:'item-destroy' %>
+      </div>
+      <% end %>
+    </div>
     <div class="item-price-box">
       <span class="item-price">
-        <%= @complaints.text %>
+        <%= raw Rinku.auto_link(@complaints.text) %>
       </span>
     </div>
-  
-    <% if user_signed_in? && current_user.id == @complaints.user_id %>
-    <%= link_to '商品の編集', edit_complaint_path(@complaints.id), method: :get, class: "item-red-btn" %>
-    <p class='or-text'>or</p>
-    <%= link_to '削除', complaint_path(@complaints), method: :delete, class:'item-destroy' %>
-    <% end %>
-
     <div class="option">
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
@@ -34,42 +35,28 @@
 
   <div class="comment-box">
     <div class= "comment-list">
+    <% @comments.each do |comment| %>
       <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
+        <div class="upper-message">
+          <div class="message-user">
+            <%= comment.user.nick_name %>
+          </div>
+          <div class="message-date">
+            <%= comment.created_at %>
+          </div>
+        </div>
+        <div class="lower-message">
+          <div class="message-content">
+            <%= raw Rinku.auto_link(h(comment.comment)) %>
+          </div>
+        </div>
       </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
+    <% end %>
     </div>
-    <div class="lower-message">
-      <div class="message-content">
-        おはよう
-      </div>
-    </div>
-  </div>
-
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Sim
-      </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        こんばんは
-      </div>
-    </div>
-  </div>
-    </div>
-    <form>
-      <textarea class="comment-text"></textarea>
-      <a href="" class="btn btn--green btn--cubic">コメントする</a>
-    </form>
+    <%= form_with model: @comment, url:complaint_comments_path(@complaints.id), local: true  do |f| %>
+      <%= f.text_area :comment, class:"comment-text", placeholder:"コメントを入力してください" %>
+      <%= f.submit "コメントする", class:"click-down" %>
+    <% end %>
   </div>
   </div>
   <div class="links">

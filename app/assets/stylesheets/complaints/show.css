@@ -16,13 +16,19 @@
 .item-box {
   background-color: #FFF;
   width: 50vw;
-  padding: 10vh 11vw 10vh 1vw;
+  padding: 2vh 11vw 10vh 1vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.item-box>.name {
+.mk{
+  display: flex;
+  width: 100%;
+  justify-content: space-between
+}
+
+.name {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -36,6 +42,22 @@
   border-width: 3px;
 }
 
+.edit-delete{
+  display: flex;
+}
+
+.item-red-btn {
+  text-align: center;
+  font-size: 15px;
+  color: #0099e8;
+  margin-right: 10px;
+}
+.item-destroy {
+  text-align: center;
+  font-size: 15px;
+  color: tomato
+}
+
 .item-box-img {
   height: 50vh;
   width: 60vw;
@@ -47,9 +69,10 @@
 .item-price-box {
   margin: 25px 0px;
   display: flex;
-  align-items: center;
+  width: 100%;
   flex-direction: column;
-  
+  background-color: #badcad;
+  box-shadow: 0 0 10px 10px #badcad;
 }
 
 .item-price-box>.item-price {
@@ -57,34 +80,8 @@
   font-weight: bold;
   word-break: break-all;
   position: relative;
-  margin: 2em auto;
-  padding: 1em 1em .5em;
-  background-color: #badcad; /* 背景色 */
+  margin: 2em;
   color: #555; /* 文字色 */ 
-  box-shadow: 0 0 10px 10px #badcad; /* 影 */
-}
-
-.item-red-btn {
-  text-align: center;
-  background-color: #36a55d;
-  font-size: 24px;
-  font-weight: bold;
-  color: #FFF;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.or-text {
-  font-size: 20px;
-}
-
-.item-destroy {
-  background-color: red;
-  text-align: center;
-  font-size: 24px;
-  color: white;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
 }
 
 .option {
@@ -139,7 +136,7 @@
 }
 
 .comment-list{
-  height: 200px;
+  height: 50vh;
   width: 100%;
   margin-bottom: 10px;
   overflow: scroll;
@@ -201,41 +198,26 @@ html {
   font-size: 62.5%;
 }
 
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
+.click-down {
   display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.1s;
-  text-align: center;
-  vertical-align: middle;
+  height: 50px;
+  width: 150px;
+  background-color: #36a55d;/*背景色*/
+  color: #FFF;/*文字色*/
+  font-size: 1em;/*文字サイズ*/
+  line-height: 1;
   text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
+  letter-spacing: 0.05em;/*字間*/
+  padding: 0.2em 1em;/*ボタン内の余白*/
+  border-radius: 3px;/*角の丸み*/
+    cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+  -webkit-tap-highlight-color: transparent;
+  transition: 0.2s;
 }
 
-a.btn--green {
-  color: #000;
-  background-color: #4bd665;
-  border-bottom: 5px solid #158b2b;
-}
-
-a.btn--green:hover {
-  margin-top: 3px;
-  color: #000;
-  background: #4bd665;
-  border-bottom: 2px solid #158b2b;
+.click-down:active {
+  transform: translateY(2px);
 }
 
 .comment-flag {
@@ -246,6 +228,7 @@ a.btn--green:hover {
 .comment-flag-icon {
   margin: 10px 5px 0 0;
 }
+
 
 .links {
   display: flex;
