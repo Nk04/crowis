@@ -38,7 +38,8 @@ class ComplaintsController < ApplicationController
     @complaints.destroy!
     redirect_to root_path
   rescue StandardError
-    render :edit
+    binding.pry
+    render :show
   end
 
   private
