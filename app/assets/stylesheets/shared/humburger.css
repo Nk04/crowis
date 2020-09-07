@@ -1,0 +1,124 @@
+body{
+  margin: 0;
+}
+a{
+  color: #040404;
+  text-decoration: none;
+}
+.mainView{
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccc;
+}
+/*ハンバーガーボタン*/
+.el_humburger {
+  position: fixed;
+  top: 45px;
+  right: 60px;
+  width: 46px;
+  height: 25px;
+  padding-top: 1px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 0px;
+  z-index: 20;
+  cursor: pointer;
+  pointer-events: auto;
+  color: #000;
+  text-align: center;}
+
+.el_humburger_wrapper {
+  margin-bottom: 5px;
+  width: 42px;
+  display: inline-block; }
+
+.el_humburger_text {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-family: "游ゴシック Medium", YuGothic, "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif; }
+
+.js_humburgerOpen .el_humburger_text.el_humburger_text__menu {
+  display: none; }
+
+.el_humburger_text.el_humburger_text__close {
+  display: none; }
+
+.js_humburgerOpen .el_humburger_text.el_humburger_text__close {
+  display: block; }
+
+.el_humburger span.el_humburger_bar {
+  display: block;
+  width: 100%;
+  margin: 0 auto 9px;
+  height: 1px;
+  background: #000;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
+
+.el_humburger span.el_humburger_bar:last-child {
+  margin-bottom: 0; }
+
+.js_humburgerOpen .el_humburger span.el_humburger_bar {
+  background: #000; }
+
+
+.js_humburgerOpen .el_humburger span.el_humburger_bar.top {
+  -webkit-transform: translateY(9px) rotate(-45deg);
+  -ms-transform: translateY(9px) rotate(-45deg);
+  transform: translateY(9px) rotate(-45deg); }
+
+.js_humburgerOpen .el_humburger span.el_humburger_bar.middle {
+  opacity: 0; }
+
+.js_humburgerOpen .el_humburger span.el_humburger_bar.bottom {
+  -webkit-transform: translateY(-11px) rotate(45deg);
+  -ms-transform: translateY(-11px) rotate(45deg);
+  transform: translateY(-11px) rotate(45deg); }
+
+.el_humburgerButton.el_humburgerButton__close {
+  top: 2%;
+  right: 2%; }
+
+.el_humburgerButton__close span.el_humburger_bar {
+  display: block;
+  width: 35px;
+  margin: 0 auto;
+  height: 4px;
+  background: #000; }
+
+.el_humburgerButton__close span.el_humburger_bar.top {
+  -webkit-transform: translateY(5px) rotate(-45deg);
+  -ms-transform: translateY(5px) rotate(-45deg);
+  transform: translateY(5px) rotate(-45deg); }
+
+.el_humburgerButton__close span.el_humburger_bar.bottom {
+  -webkit-transform: translateY(-6px) rotate(45deg);
+  -ms-transform: translateY(-6px) rotate(45deg);
+  transform: translateY(-6px) rotate(45deg); }
+
+.navi {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 0;
+  z-index: 3;
+  padding-top: 100px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 600ms ease-out;
+  -o-transition: all 600ms ease-out;
+  transition: all 600ms ease-out;
+  overflow: hidden; }
+  .js_humburgerOpen .navi {
+    width: 250px; }
+
+.navi_item {
+  margin-bottom: 28px;
+  font-size: 20px;
+  font-family: "Marcellus", serif !important;
+  white-space: nowrap;
+  margin-left: 90px; }
+  .navi_item.op_innerLink {
+    cursor: pointer; }
