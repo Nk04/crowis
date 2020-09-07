@@ -1,0 +1,2 @@
+class EmpathiesController < ApplicationController
+end
