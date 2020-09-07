@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :destroy]
   resources :complaints do
     resources :comments, only: :create
+    resources :empathies, only: [:create, :destroy]
   end
 end
