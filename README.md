@@ -35,6 +35,7 @@
 ### Association
 - has_many :complaints
 - has_many :comments
+- has_many :empathy
 
 ## complaints テーブル
 
@@ -46,7 +47,19 @@
 
 ### Association
 - belongs_to :user
-- has_many   :comments
+- has_many   :comments, dependent: :destroy
+- has_many   :empathy,  dependent: :destroy
+
+## empathy テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| complaint | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :complaint
 
 ## comment テーブル
 

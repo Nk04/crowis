@@ -6,6 +6,7 @@ class User < ApplicationRecord
   # association
   has_many :complaints
   has_many :comments
+  has_many :empathy
 
   # validation
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
