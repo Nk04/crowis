@@ -1,11 +1,8 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 <%= render "shared/humburger" %>
 <div class="mainView">
-<!--ページコンテンツ-->
-
 <%= render "shared/header" %>
 <div class='main'>
-
-  <%# 商品一覧 %>
   <div class='item-contents'>
     <%= link_to '新規投稿一覧', "#", class: "title" %>
     <ul class='item-lists'>
@@ -15,24 +12,21 @@
           <h1 class='item-name'>
             <%= complaints.title %>
           </h1>
-            <p class='complaint-text'><%= complaints.text %></p>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-        </div> 
+          <p class='complaint-text'><%= complaints.text %></p>
         <% end %>
+        <div class='star-btn'>
+          <div id = "like-<%= complaints.id %>">
+            <%= render  partial: 'shared/empathy', locals: { complaints: complaints } %>
+          </div>
+        </div>
       </li>
       <% end %>
     </ul>
   </div>
-
-  <%# //商品一覧 %>
-</div>
-<%= link_to  new_complaint_path do %>
-  <div class='purchase-btn'>
-    <span class='purchase-btn-text'>投稿する</span>
-  </div>
-<% end %>
-<%= render "shared/footer" %>
-
+  <%= link_to  new_complaint_path do %>
+    <div class='purchase-btn'>
+      <span class='purchase-btn-text'>投稿する</span>
+    </div>
+  <% end %>
+  <%= render "shared/footer" %>
 </div>

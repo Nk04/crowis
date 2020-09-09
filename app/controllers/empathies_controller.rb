@@ -1,18 +1,18 @@
 class EmpathiesController < ApplicationController
-  before_action :set_complaint
-
+  before_action :set_complaints
   def create
-    @empathy = Empathy.create(user_id: current_user.id, complaint_id: @complaint.id)
+    @empathy = Empathy.new(user_id: current_user.id, complaint_id: params[:complaint_id])
+    @empathy.save
   end
 
   def destroy
-    @empathy = current_user.Empathy.find_by(complaint_id: @complaint.id)
+    @empathy = current_user.empathy.find_by(user_id: current_user.id, complaint_id: params[:complaint_id])
     @empathy.destroy
   end
-end
 
-private
+  private
 
-def set_complaint
-  @complaint = Complaint.find(:complaint_id)
+  def set_complaints
+    @complaint = Complaint.find(params[:complaint_id])
+  end
 end

@@ -3,7 +3,8 @@ class ComplaintsController < ApplicationController
   before_action :access_restrictions, only: [:edit, :update, :destroy]
 
   def index
-    @complaints = Complaint.order('created_at DESC')
+    @complaints = Complaint.all.order('created_at DESC')
+    @empathy = Empathy.new
   end
 
   def new
@@ -38,7 +39,6 @@ class ComplaintsController < ApplicationController
     @complaints.destroy!
     redirect_to root_path
   rescue StandardError
-    binding.pry
     render :show
   end
 
