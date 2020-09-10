@@ -1,6 +1,6 @@
 /* 商品の概要 */
 
-.item-show {
+.show {
   width: 100vw;
   display: flex;
   flex-direction: column;

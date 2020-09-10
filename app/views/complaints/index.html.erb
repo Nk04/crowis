@@ -2,7 +2,9 @@
 <%= render "shared/humburger" %>
 <div class="mainView">
 <%= render "shared/header" %>
-<div class='main'>
+
+<div class='main'>  
+  <%# 投稿一覧 %>
   <div class='item-contents'>
     <%= link_to '新規投稿一覧', "#", class: "title" %>
     <ul class='item-lists'>
@@ -12,17 +14,19 @@
           <h1 class='item-name'>
             <%= complaints.title %>
           </h1>
-          <p class='complaint-text'><%= complaints.text %></p>
+          <div class='complaint-text'><%= simple_format(h(complaints.text)) %></div>
         <% end %>
-        <div class='star-btn'>
+        <%# 共感ボタン %>
           <div id = "like-<%= complaints.id %>">
             <%= render  partial: 'shared/empathy', locals: { complaints: complaints } %>
           </div>
-        </div>
+        <%# /共感ボタン %>
       </li>
       <% end %>
     </ul>
   </div>
+  <%# /投稿一覧 %>
+
   <%= link_to  new_complaint_path do %>
     <div class='purchase-btn'>
       <span class='purchase-btn-text'>投稿する</span>
