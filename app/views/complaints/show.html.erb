@@ -1,8 +1,10 @@
-<%= render "shared/header" %>
+<%= render "shared/humburger" %>
 
-<%# 商品の概要 %>
-<div class="item-show">
+<div class="mainView">
+<%= render "shared/header" %>
+<div class="show">
 <div class="item-comment-box">
+<%# 投稿の概要 %>
   <div class="item-box">
     <div class="mk">
       <h2 class="name">
@@ -17,7 +19,7 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        <%= raw Rinku.auto_link(@complaints.text) %>
+        <%= raw simple_format(Rinku.auto_link(@complaints.text)) %>
       </span>
     </div>
     <div class="option">
@@ -30,8 +32,9 @@
       </div>
     </div>
   </div>
-  <%# /商品の概要 %>
-
+  <%# /投稿の概要>
+  
+  <%# コメント欄 %>
   <div class="comment-box">
     <div class= "comment-list">
     <% @comments.each do |comment| %>
@@ -46,7 +49,7 @@
         </div>
         <div class="lower-message">
           <div class="message-content">
-            <%= raw Rinku.auto_link(h(comment.comment)) %>
+            <%= raw simple_format(Rinku.auto_link(h(comment.comment))) %>
           </div>
         </div>
       </div>
@@ -57,6 +60,8 @@
       <%= f.submit "コメントする", class:"click-down" %>
     <% end %>
   </div>
+  <%# /コメント欄 %>
+
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
@@ -70,3 +75,4 @@
 </div>
 
 <%= render "shared/footer" %>
+</div>

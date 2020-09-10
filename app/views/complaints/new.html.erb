@@ -1,18 +1,16 @@
 <%= render "shared/humburger" %>
-<div class="mainView">
-<!--ページコンテンツ-->
 
+<div class="mainView">
 <%= render "shared/header" %>
-    
   <div class="items-sell-main">
     <h2 class="items-sell-title">不満に関する情報を入力</h2>
     <%= form_with model: @complaints, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%# エラーメッセージ%>
+    <% render 'shared/error_messages', model: @complaints %>
+    <%# //エラーメッセージ%>
 
-    <%# 商品名と商品説明 %>
+    <%# タイトルと内容 %>
     <div class="new-items">
       <div class="weight-bold-text">
         タイトル
@@ -27,7 +25,7 @@
         <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"内容 例）小指をぶつけてしまい、とても痛かった。タンスの角につけるカバーが欲しい。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
+    <%# /タイトルと内容 %>
     
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
@@ -35,6 +33,7 @@
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
+
   </div>
   <% end %>
 <%= render "shared/footer" %>

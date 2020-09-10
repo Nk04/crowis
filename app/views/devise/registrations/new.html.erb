@@ -8,9 +8,9 @@
     </h1>
   </div>
 
-  <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-  <%# render 'shared/error_messages', model: f.object %>
-  <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+  <%# エラーメッセージ%>
+  <% render 'shared/error_messages', model: @user %>
+  <%# //エラーメッセージ%>
 
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -51,7 +51,10 @@
   <div class='register-btn'>
     <%= f.submit "会員登録" ,class:"register-red-btn" %>
   </div>
+    <div class="sign-in">
+    <ul class='lists-right'>
+      <li>アカウントをお持ちの方は<%= link_to 'ログイン', new_user_session_path, class: "sign-up" %></li>
+    </ul>
+  </div>
 </div>
 <% end %>
-
-<%= render "shared/second-footer"%>
