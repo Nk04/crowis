@@ -53,6 +53,6 @@ class ComplaintsController < ApplicationController
   end
 
   def access_restrictions
-    redirect_to root_path if current_user.id !=  @complaints.user_id
+    redirect_to root_path if current_user.id != @complaints.user_id
   end
 end
