@@ -16,12 +16,14 @@
  まさに三人寄れば文殊の知恵です。
 
 # Demo
- ![コメント投稿テスト](https://user-images.githubusercontent.com/68424329/92883473-d4e93800-f44b-11ea-9cb7-54944eed5e30.gif)
-
+投稿テストのdemo動画です
  ![投稿テスト](https://user-images.githubusercontent.com/68424329/92883743-2265a500-f44c-11ea-99bd-4a5932ec6a5a.gif)
 
- ![いいね機能とハンバーガーメニュー](https://user-images.githubusercontent.com/68424329/92884744-18907180-f44d-11ea-9f48-4d1235ef4798.gif)
+コメント投稿のdemo動画です
+ ![コメント投稿テスト](https://user-images.githubusercontent.com/68424329/92883473-d4e93800-f44b-11ea-9cb7-54944eed5e30.gif)
 
+共感機能(いいね機能)のdemo動画です。最後のはちょっとお洒落にしようと導入したハンバガーメニューです。
+ ![いいね機能とハンバーガーメニュー](https://user-images.githubusercontent.com/68424329/92884744-18907180-f44d-11ea-9f48-4d1235ef4798.gif)
  
 # Ingenuity
  
