@@ -1,6 +1,7 @@
 class ComplaintsController < ApplicationController
   before_action :set_complaints, only: [:edit, :update, :destroy]
   before_action :access_restrictions, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   def index
     @complaints = Complaint.all.order('created_at DESC')

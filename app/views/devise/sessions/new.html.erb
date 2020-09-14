@@ -1,6 +1,5 @@
 <%= render "shared/second-header"%>
 
-<div class = mainView>
 <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
@@ -36,4 +35,3 @@
   </div>
 </div>
 <% end %>
-</div>

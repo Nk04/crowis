@@ -1,12 +1,19 @@
 <div class='star-btn'>
-  <% if complaints.empathy.find_by(user_id: current_user.id) %>
-    <%= link_to complaint_empathy_path([complaints.id], id: complaints.empathy.ids), method: :delete, remote: true do %>
-      <div class="fa fa-heart unlike-btn"></div>
+  <% if user_signed_in? %>
+  <%# いいね後 %>
+    <% if complaints.empathy.find_by(user_id: current_user.id) %>
+      <%= link_to complaint_empathy_path([complaints.id], id: complaints.empathy.ids), method: :delete, remote: true do %>
+        <div class="fa fa-heart unlike-btn"></div>
+      <% end %>
+  <%# いいね前 %>
+    <% else %>
+      <%= link_to complaint_empathies_path(complaints.id), method: :post, remote: true do %>
+      <div class="fa fa-heart like-btn"></div>
+      <% end %>
     <% end %>
+  <%# 非ログイン時 %>
   <% else %>
-    <%= link_to complaint_empathies_path(complaints.id), method: :post, remote: true do %>
-    <div class="fa fa-heart like-btn"></div>
-    <% end %>
+  <div class="fa fa-heart like-btn"></div>
   <% end %>
   <p class='empathy'>共感</p>
   <%= complaints.empathy.count %>
