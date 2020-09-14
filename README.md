@@ -27,11 +27,12 @@
  
 # Ingenuity
  部分テンプレートを多用したり、簡潔なコメントアウトを心がけてコードを出来る限り見やすくしました。
- 
+ 一度発生したエラーはメモにとり、コードの働きの再認識と同じ、又は似たようなエラーが発生した際にスムーズにかいけつできるようにしました。
+ ハンバーガーメニューを導入したりレイアウトを少しこだわったりとプログラミングを楽しみながら開発しました。
  
  
 # Development Environment
- Ruby/Ruby on Rails/Html・Css/JavaScript
+ Ruby/Ruby on Rails/Html・Css/JavaScript/Mysql
  
 # To Be Implemented
  セキュリティーが甘いので、ネットで検索し、学習して取り入れようと思います
