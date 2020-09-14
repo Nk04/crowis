@@ -16,23 +16,27 @@
  まさに三人寄れば文殊の知恵です。
 
 # Demo
-投稿テストのdemo動画です
+**投稿テストのdemo動画です**
  ![投稿テスト](https://user-images.githubusercontent.com/68424329/92883743-2265a500-f44c-11ea-99bd-4a5932ec6a5a.gif)
 
-コメント投稿のdemo動画です
+**コメント投稿のdemo動画です。gemを使ってURLを自動認識してリンクにし、飛べるようにしてます**
  ![コメント投稿テスト](https://user-images.githubusercontent.com/68424329/92883473-d4e93800-f44b-11ea-9cb7-54944eed5e30.gif)
 
-共感機能(いいね機能)のdemo動画です。最後のはちょっとお洒落にしようと導入したハンバガーメニューです。
+**共感機能(いいね機能)のdemo動画です。最後のはちょっとお洒落にしようと導入したハンバガーメニューです。**
  ![いいね機能とハンバーガーメニュー](https://user-images.githubusercontent.com/68424329/92884744-18907180-f44d-11ea-9f48-4d1235ef4798.gif)
  
 # Ingenuity
+ 部分テンプレートを多用したり、簡潔なコメントアウトを心がけてコードを出来る限り見やすくしました。
+ 
  
  
 # Development Environment
- 
+ Ruby/Ruby on Rails/Html・Css/JavaScript
  
 # To Be Implemented
- 
+ セキュリティーが甘いので、ネットで検索し、学習して取り入れようと思います
+ 追加の機能については、タグ付け機能、検索機能、カテゴリー分け機能の実装。
+ また画面サイズの縮小によるレイアウトの崩れも修正していきたいと考えています
  
 # Database Design
 

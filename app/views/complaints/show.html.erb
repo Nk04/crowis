@@ -10,6 +10,7 @@
       <h2 class="name">
         <%= @complaints.title %>
       </h2>
+    <%# 投稿主の場合%>
       <% if user_signed_in? && current_user.id == @complaints.user_id %>
       <div class= "edit-delete">
         <%= link_to '編集', edit_complaint_path(@complaints.id), method: :get, class: "item-red-btn" %>

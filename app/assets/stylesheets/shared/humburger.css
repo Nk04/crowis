@@ -120,3 +120,33 @@ a{
   margin-left: 90px; }
   .navi_item.op_innerLink {
     cursor: pointer; }
+
+.category-list {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.mypage {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
