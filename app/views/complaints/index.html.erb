@@ -24,8 +24,10 @@
       </li>
       <% end %>
     </ul>
+    <%= paginate @complaints %>
   </div>
   <%# /投稿一覧 %>
+  
 
   <%= link_to  new_complaint_path do %>
     <div class='purchase-btn'>
