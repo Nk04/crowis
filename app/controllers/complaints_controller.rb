@@ -4,7 +4,7 @@ class ComplaintsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :destroy]
 
   def index
-    @complaints = Complaint.all.order('created_at DESC')
+    @complaints = Complaint.all.page(params[:page]).per(9).order('created_at DESC')
     @empathy = Empathy.new
   end
 
