@@ -9,4 +9,12 @@ class Complaint < ApplicationRecord
     validates :title
     validates :text
   end
+
+  def self.search(search)
+    if search != ""
+      Complaint.where('text LIKE(?)', "%#{search}%")
+    else
+      Complaint.all
+    end
+  end
 end
