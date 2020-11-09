@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 <%= render "shared/humburger" %>
 
 <div class="mainView">
@@ -24,8 +25,10 @@
       </span>
     </div>
     <div class="option">
-      <div class="favorite-btn">
-        <span class= fovorite-btn-font >それな 0</span>
+      <div class="shows-like">
+        <div id = "like-<%= @complaints.id %>">
+          <%= render  partial: 'shared/empathy', locals: { complaints: @complaints } %>
+        </div>
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
