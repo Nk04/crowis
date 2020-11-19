@@ -2,8 +2,7 @@ class ComplaintsController < ApplicationController
   before_action :set_complaints, only: [:edit, :update, :destroy]
   before_action :access_restrictions, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :update, :destroy]
-  before_action :move_to_index, except: [:index, :show, :search]
-
+  
   def index
     @complaints = Complaint.all.page(params[:page]).per(9).order('created_at DESC')
     @empathy = Empathy.new
@@ -42,10 +41,6 @@ class ComplaintsController < ApplicationController
     redirect_to root_path
   rescue StandardError
     render :show
-  end
-
-  def search
-    @complaints = Complaint.search(params[:keyword])
   end
 
   private
