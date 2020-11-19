@@ -2,7 +2,7 @@ class ComplaintsController < ApplicationController
   before_action :set_complaints, only: [:edit, :update, :destroy]
   before_action :access_restrictions, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :update, :destroy]
-  
+
   def index
     @complaints = Complaint.all.page(params[:page]).per(9).order('created_at DESC')
     @empathy = Empathy.new
@@ -57,3 +57,4 @@ class ComplaintsController < ApplicationController
     redirect_to root_path if current_user.id != @complaints.user_id
   end
 end
+
